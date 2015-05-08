@@ -261,7 +261,10 @@ class XeroOAuth {
 						'curlHeader' 
 				),
 				CURLOPT_HEADER => FALSE,
-				CURLINFO_HEADER_OUT => TRUE 
+				CURLINFO_HEADER_OUT => TRUE,
+				CURLOPT_SSL_CIPHER_LIST => 'TLSv1',
+                                CURLOPT_SSLVERSION => CURL_SSLVERSION_TLSv1,
+                                CURLOPT_USE_SSL => CURLUSESSL_ALL
 		) );
 		
 		if ($this->config ['application_type'] == "Partner") {
